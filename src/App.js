@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path='*' element={<Error />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
